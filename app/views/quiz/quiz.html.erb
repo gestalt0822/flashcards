@@ -1,0 +1,14 @@
+<div>
+問題数を選んで下さい。<br />
+<%= form_tag('/quiz/question', method: :get,) do %>
+<%= radio_button_tag(:total_number, 5) %>5問<br />
+<%= radio_button_tag(:total_number, 10) %>10問<br />
+<%= radio_button_tag(:total_number, 20) %>20問<br />
+
+<%= hidden_field_tag(:question_number, @question_number) %>
+<%= hidden_field_tag(:correct_number, @correct_number) %>
+<%= hidden_field_tag(:incorrect_number, @incorrect_number) %>
+<input type="submit" value="開始！">
+<% end %>
+
+</div>

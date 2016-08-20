@@ -1,0 +1,8 @@
+<div>
+
+  <h2>正解率ランキング</h2>
+
+    <% @ranking_a.each.with_index(1) do |ranking_a, i| %>
+      <%= i %>位・・・<%= ranking_a.nickname %>さん・・・<%= ranking_a.accuracy_rate %>%<br />
+    <% end %>
+</div>

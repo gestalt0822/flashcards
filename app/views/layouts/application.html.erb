@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flashcards</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<header>
+  <ul>
+    <li><a href="/">Home</a>｜</li>
+    <li><%= link_to "Quiz" , quiz_quiz_path %>｜</li>
+    <li><%= link_to "NewWords" , words_new_path %>｜</li>
+    <li><%= link_to "WordsList" , words_list_path %>｜</li>
+    <% if user_signed_in? %>
+    <li><a href="/users/<%= current_user.id %>">My page</a>｜</li>
+    <li><%= link_to "Ranking" , words_ranking_path %>｜</li>
+    <li><%= link_to "Logout", destroy_user_session_path, method: :delete %>｜</li>
+    <% else %>
+    <li><%= link_to "Login", new_user_session_path %>｜</li>
+    <li><%= link_to "SignUp", new_user_registration_path %></li>
+    <% end %>
+  </ul>
+</header>
+
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<div>
+<h2><%= @nickname %>さんのマイページ</h2>
+通算正解数は<%= @user.correct %><br />
+通算回答数は<%= @user.try %><br />
+通算正解率は<%= @user.accuracy_rate %>%です！！！<br /><br />
+
+<b><%= @nickname %>さんの登録した単語一覧</b>(<%= @words_count %>単語登録）<br /><br />
+  <% @words.each.with_index(1) do |word, i| %>
+  <%= i %>.<%= word.word %>・・・<%= word.meaning %>
+  　<%= link_to '削除', "/words/#{word.id}", method: :delete, class: 'another_question' %>
+    　<%= link_to '編集', "/words/#{word.id}/edit", method: :get, class: 'another_question' %>  <br />
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+  
+<div class="wall"><br />
+現在<%= @total_number %>問中<%= @question_number %>問目<br /><br />
+あなた答え・・・<b><%= @answer %></b><br /><br />
+正解は・・・<b><%= @word_meaning %></b><br /><br />
+<span class="result"><%= @result %>です!!!</span><br /><br />
+
+
+<% if @question_number == @total_number %>
+
+  <%= form_tag('/quiz/result', method: :get,) do %>
+  <%= hidden_field_tag(:total_number, @total_number) %>
+  <%= hidden_field_tag(:question_number, @question_number) %>
+  <%= hidden_field_tag(:correct_number, @correct_number) %>
+  <%= hidden_field_tag(:incorrect_number, @incorrect_number) %>
+  <input type="submit" value="結果を表示">
+  <% end %>
+
+<% else %>
+
+  <%= form_tag('/quiz/question', method: :get,) do %>
+  <%= hidden_field_tag(:total_number, @total_number) %>
+  <%= hidden_field_tag(:question_number, @question_number) %>
+  <%= hidden_field_tag(:correct_number, @correct_number) %>
+  <%= hidden_field_tag(:incorrect_number, @incorrect_number) %>
+  <input type="submit" value="次の問題">
+  <% end %>
+
+<% end %>
+
+
+</div>

@@ -1,0 +1,9 @@
+  <%= form_tag("/words/#{@word.id}", method: :patch) do %>
+    <input type="text" name="word" class="new_words" placeholder="単語を入力して下さい(英語)" value="<%= @word.word %>" /><br />
+    <input type="text" name="meaning" class="new_words"  placeholder="単語の意味を入力して下さい(日本語）"  value="<%= @word.meaning %>" /><br />
+    <input type="text" name="wrong1" class="new_words"  placeholder="不正解の選択肢1を入力して下さい(日本語）"  value="<%= @word.wrong1 %>" /><br />
+     <input type="text" name="wrong2" class="new_words"  placeholder="不正解の選択肢2を入力して下さい(日本語）"  value="<%= @word.wrong2 %>" />
+    <div class="button-box">
+      <input type="submit" class="submit-button">
+    </div>
+  <% end %>

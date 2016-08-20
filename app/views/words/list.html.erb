@@ -1,0 +1,8 @@
+
+  <div>ここは単語一覧ページ<br />現在、<b><%= @word_count %>単語</b>が登録中。</div>
+
+<div>
+  <% @words.each.with_index(1) do |word, i| %>
+  <%= i %>.<%= word.word %>・・・<%= word.meaning %><br />
+  <% end %>
+</div>

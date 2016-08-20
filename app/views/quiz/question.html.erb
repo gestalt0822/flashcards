@@ -1,0 +1,20 @@
+<div class="wall">
+現在<%= @total_number %>問中<%= @question_number %>問目<br /><br />
+<%= @word.word %>の意味は？<br />
+<div>
+<%= form_tag('/quiz/answer', method: :get,) do %>
+<%= radio_button_tag(:answer, @words_quiz[0]) %>1.<%= @words_quiz[0] %><br />
+<%= radio_button_tag(:answer, @words_quiz[1]) %>2.<%= @words_quiz[1] %><br />
+<%= radio_button_tag(:answer, @words_quiz[2]) %>3.<%= @words_quiz[2] %><br />
+
+<%= hidden_field_tag(:word, @word) %>
+<%= hidden_field_tag(:word_meaning, @word.meaning) %>
+<%= hidden_field_tag(:total_number, @total_number) %>
+<%= hidden_field_tag(:question_number, @question_number) %>
+<%= hidden_field_tag(:correct_number, @correct_number) %>
+<%= hidden_field_tag(:incorrect_number, @incorrect_number) %>
+<input type="submit" value="答えは？？">
+<% end %>
+</div>
+
+</div>

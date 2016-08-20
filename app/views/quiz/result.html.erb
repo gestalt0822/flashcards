@@ -1,0 +1,14 @@
+<div>
+  <% if user_signed_in? %>
+<%= current_user.nickname %>さん、クイズ終了です！お疲れ様でした<br />
+<% end %>
+全<%= @total_number %>問中<%= @correct_number %>問正解！<br />
+  正解率は<b><%= @percent %>%</b>です！！！<br /><br />
+  <% if user_signed_in? %>
+  通算正解数は<%= @user.correct %><br />
+通算回答数は<%= @user.try %><br />
+通算正解率は<%= @user.accuracy_rate %>%です！！！<br /><br />
+<% else %>
+  ログインすると、成績を記録できます！<br />
+  <% end %>
+</div>
