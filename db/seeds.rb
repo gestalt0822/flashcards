@@ -12,5 +12,4 @@ require "csv"
 # words_csv.each do |row|
 # Word.create(words: row[1], meaning: row[2], wrong1: row[3], wrong2: row[4]) # end
 
-CSV.foreach('db/words.csv', encoding: 'Shift_JIS:UTF-8') do |row|
-Model.create(words: row[1], meaning: row[2], wrong1: row[3], wrong2: row[4]) end
+CSV.foreach('db/words.csv', encoding: 'Shift_JIS:UTF-8') do |row| Word.create(words: row[1], meaning: row[2], wrong1: row[3], wrong2: row[4]) end
