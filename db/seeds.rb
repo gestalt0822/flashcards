@@ -8,7 +8,8 @@
 User.create(email: 'aoki_in_australia@yahoo.co.jp' ,password: 'btcs0822', nickname: 'dice-k')
 
 require "csv"
-words_csv = CSV.readlines("db/words.csv")
+
+words_csv = CSV.readlines("db/words.csv", encoding:'Shift_JIS:UTF-8')
 words_csv.shift
 words_csv.each do |row|
   Word.create(words: row[1], meaning: row[2], wrong1: row[3], wrong2: row[4])
