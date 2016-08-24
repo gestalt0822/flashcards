@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  get 'users/:id' => 'users#show'
+
+  resources :user , only: :show
   get 'words/ranking' => 'words#ranking'
   get 'quiz/quiz' => 'quiz#quiz'
   get 'quiz/question' => 'quiz#question'
