@@ -12,6 +12,11 @@ class WordsController < ApplicationController
     @word_count = Word.count
   end
 
+  def search
+    # 検索フォームのキーワードをあいまい検索して、wordsテーブルから20件の単語情報を取得する
+    @words = Word.where('title LIKE(?)', "%#{params[:word]}%").limit(20)
+  end
+
   def ranking
    @ranking_a = User.order('accuracy_rate DESC').limit(5)
    @ranking_b = User.order('try DESC').limit(5)
