@@ -1,11 +1,12 @@
   
-<div class="wall"><br />
-現在<%= @total_number %>問中<%= @question_number %>問目<br /><br />
-あなた答え・・・<b><%= @answer %></b><br /><br />
-正解は・・・<b><%= @word_meaning %></b><br /><br />
-<span class="result"><%= @result %>です!!!</span><br /><br />
-
-
+<div class="wall">
+現在<%= @total_number %>問中<%= @question_number %>問目<br />
+<ul>
+  <li>あなた答え・・・<b><%= @answer %></b></li>
+<li>正解は・・・<b><%= @word_meaning %></b></li>
+<li><span class="result"><%= @result %>です!!!</span></li>
+  </ul>
+  
 <% if @question_number == @total_number %>
 
   <%= form_tag('/quiz/result', method: :get,) do %>

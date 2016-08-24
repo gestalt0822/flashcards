@@ -1,7 +1,7 @@
 <div class="wall">
-現在<%= @total_number %>問中<%= @question_number %>問目<br /><br />
-<%= @word.word %>の意味は？<br />
-<div>
+現在<%= @total_number %>問中<%= @question_number %>問目<br />
+<h2><%= @word.word %>の意味は？</h2>
+
 <%= form_tag('/quiz/answer', method: :get,) do %>
 <%= radio_button_tag(:answer, @words_quiz[0]) %>1.<%= @words_quiz[0] %><br />
 <%= radio_button_tag(:answer, @words_quiz[1]) %>2.<%= @words_quiz[1] %><br />
@@ -15,6 +15,5 @@
 <%= hidden_field_tag(:incorrect_number, @incorrect_number) %>
 <input type="submit" value="答えは？？">
 <% end %>
-</div>
 
 </div>
