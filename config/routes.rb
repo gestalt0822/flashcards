@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :user , only: :show
+  resources :users , only: :show
   get 'words/ranking' => 'words#ranking'
   get 'quiz/quiz' => 'quiz#quiz'
   get 'quiz/question' => 'quiz#question'
