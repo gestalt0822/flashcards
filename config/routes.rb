@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :words do
+  root  'words#index'
+  get 'words/list' => 'words#list'
+  resources :words , except: :show do
     collection do
       get 'search'
     end

@@ -7,7 +7,7 @@ class WordsController < ApplicationController
     @word = Word.new
   end
 
-  def show
+  def list
     @words = Word.all
     @word_count = Word.count
   end
