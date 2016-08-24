@@ -8,7 +8,7 @@ class WordsController < ApplicationController
   end
 
   def list
-    @words = Word.all
+    @words = Word.all.page(params[:page]).per(15)
     @word_count = Word.count
   end
 
