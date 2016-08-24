@@ -118,6 +118,10 @@ a:link.delete_edit{
   display: block;
 }
 
+  .navbar {
+    border-radius: 4px;
+  }
+
  *
  *= require_tree .
  *= require_self
