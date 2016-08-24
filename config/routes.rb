@@ -7,7 +7,11 @@ Rails.application.routes.draw do
   delete 'words/:id' => 'words#destroy'
   get 'words/:id/edit' => 'words#edit'
   patch 'words/:id' => 'words#update'
-  get 'words/list' => 'words#list'
+  get 'words/show' => 'words#show' do
+    collection do
+      get 'search'
+    end
+  end
   get 'users/:id' => 'users#show'
   get 'words/ranking' => 'words#ranking'
   get 'quiz/quiz' => 'quiz#quiz'
