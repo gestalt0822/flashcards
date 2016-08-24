@@ -1,6 +1,13 @@
 <% if user_signed_in? %>
 
-<div>新しい単語を追加<br />
+  <h2>追加前に検索してみよう</h2>
+
+  <%= form_tag('/words/search', method: :get) do %>
+  <input name="keyword" placeholder="単語で検索" type="text" value=""><button title="検索" type="submit" class="button"><i class="icon-search"></i></button></input>
+  <% end %>
+
+<div>
+<h2>新しい単語を追加</h2>
 
   <%= form_tag('/words', method: :post,) do %>
     <input type="text" name="word" class="new_words" placeholder="単語を入力して下さい(英語)" /><br />
